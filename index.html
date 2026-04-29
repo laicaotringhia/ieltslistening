@@ -3,124 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IELTS Map Labelling - Gen Z Guide</title>
+    <title>IELTS Map Labelling - Gen Z Masterclass</title>
     <style>
         :root {
             --primary: #6C63FF;
             --secondary: #FF6584;
+            --accent: #FFD700;
             --bg: #F0F2F5;
             --card: #FFFFFF;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg);
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 2rem 0;
             margin: 0;
             color: #333;
         }
         .container {
-            width: 90%;
-            max-width: 600px;
+            width: 95%;
+            max-width: 700px;
             background: var(--card);
             padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
-        h1 { color: var(--primary); font-size: 1.5rem; }
+        h1 { color: var(--primary); text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 2rem; }
+        
         .step-box {
-            margin-top: 1.5rem;
+            background: #f9f9ff;
             padding: 1.5rem;
             border: 2px dashed var(--primary);
             border-radius: 15px;
-            min-height: 150px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-height: 120px;
+            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
-        .btn-group {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 20px;
+
+        .section-title {
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
         button {
-            padding: 12px;
+            padding: 12px 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             background: var(--primary);
             color: white;
             cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-size: 0.9rem;
         }
-        button:hover { transform: scale(1.05); background: #5650d8; }
+
+        button:hover { opacity: 0.9; transform: translateY(-2px); }
+        
+        .btn-practice { background: #4CAF50; }
+        .btn-practice:hover { background: #45a049; }
+
         .badge {
             display: inline-block;
-            padding: 4px 8px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            text-transform: uppercase;
         }
-        .distractor { background: #ffebee; color: #c62828; }
-        .connector { background: #e8f5e9; color: #2e7d32; }
-        .keyword { background: #e3f2fd; color: #1565c0; }
-        .footer { margin-top: 20px; font-size: 0.9rem; color: #888; }
+        .distractor { background: #FFE5E5; color: #D32F2F; }
+        .connector { background: #E8F5E9; color: #2E7D32; }
+        .keyword { background: #E3F2FD; color: #1976D2; }
+
+        .explanation-text { line-height: 1.6; font-size: 0.95rem; }
+        .ans-highlight { color: var(--secondary); font-weight: bold; font-size: 1.1rem; }
+        
+        .footer { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #999; border-top: 1px solid #eee; padding-top: 1rem; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>🗺️ IELTS Map: Level Up Guide</h1>
-    <p>Chọn từng bước để xem "bí kíp" phá đảo bản đồ nhé!</p>
+    <h1>🗺️ IELTS Map Labelling Master</h1>
+    <p class="subtitle">Bí kíp phá đảo Part 2 Listening dành cho hệ "cày" IELTS</p>
 
-    <div id="display-box" class="step-box">
-        <p>Sẵn sàng chưa? Click nút bên dưới để bắt đầu "on mic"!</p>
+    <div class="section-title">🚀 1. LÝ THUYẾT CHIẾN THUẬT</div>
+    <div id="step-display" class="step-box">
+        <p style="text-align: center; color: #888;">Chọn một bước bên dưới để học kỹ năng...</p>
     </div>
 
-    <div class="btn-group">
-        <button onclick="showStep(1)">Bước 1: Check Map</button>
-        <button onclick="showStep(2)">Bước 2: Định vị Toạ độ</button>
-        <button onclick="showStep(3)">Bước 3: Bắt Key & Connect</button>
-        <button onclick="showStep(4)">Bước 4: Tránh Bẫy (Distractors)</button>
+    <div class="btn-grid">
+        <button onclick="showContent('s1')">1. Scan Địa Bàn</button>
+        <button onclick="showContent('s2')">2. Gốc Toạ Độ</button>
+        <button onclick="showContent('s3')">3. Rê Bút Theo</button>
+        <button onclick="showContent('s4')">4. Né Trap (Bẫy)</button>
+    </div>
+
+    <div class="section-title">🎯 2. GIẢI CHI TIẾT (MAP TRÊN)</div>
+    <div id="practice-display" class="step-box" style="border-color: #4CAF50; background: #f6fff7;">
+        <p style="text-align: center; color: #888;">Chọn câu hỏi để xem giải thích đáp án...</p>
+    </div>
+
+    <div class="btn-grid">
+        <button class="btn-practice" onclick="showContent('q16')">Câu 16: Supermarket</button>
+        <button class="btn-practice" onclick="showContent('q17')">Câu 17: Climbing store</button>
+        <button class="btn-practice" onclick="showContent('q18')">Câu 18: Museum</button>
+        <button class="btn-practice" onclick="showContent('q19')">Câu 19: Bike hire</button>
+        <button class="btn-practice" onclick="showContent('q20')">Câu 20: Café</button>
     </div>
     
-    <p class="footer">Stay calm & slay the Listening test! ✨</p>
+    <p class="footer">Design by Gemini • Cố gắng lên, 8.0 Listening trong tầm tay! 🔥</p>
 </div>
 
 <script>
-    const content = {
-        1: {
-            title: "🔍 Bước 1: Scan nhanh 'địa bàn'",
-            desc: "Dành 20s xem tiêu đề và các địa danh có sẵn (Town Hall, Pond, Railway station...). <br><span class='badge keyword'>Keywords:</span> Tập trung vào các danh từ riêng đã in sẵn trên map vì chúng là 'cột mốc' cố định.",
+    const data = {
+        // Hướng dẫn các bước
+        s1: {
+            target: 'step-display',
+            html: `<h3>🔍 Scan nhanh 'Địa bàn'</h3>
+                   <p class='explanation-text'><span class='badge keyword'>Keywords:</span> Town Hall, Pond, Old Railway... Đây là các 'mốc xích' giúp bạn không bị lạc trôi khi Audio chạy nhanh.</p>`
         },
-        2: {
-            title: "📍 Bước 2: Xác định 'Gốc toạ độ'",
-            desc: "Tìm điểm xuất phát (thường là 'You are here' hoặc lối vào chính). <br><span class='badge connector'>Connectors:</span> Chuẩn bị tinh thần cho các cụm từ hướng dẫn: <i>Go straight, Turn left, Opposite, At the junction...</i>",
+        s2: {
+            target: 'step-display',
+            html: `<h3>📍 Xác định điểm Start</h3>
+                   <p class='explanation-text'><span class='badge connector'>Connectors:</span> Nghe kỹ các từ chỉ vị trí như <i>At the junction, Opposite, Beside</i>. Thông thường bạn sẽ bắt đầu từ phía dưới bản đồ đi lên.</p>`
         },
-        3: {
-            title: "⚡ Bước 3: Follow theo nhịp Audio",
-            desc: "Tay cầm bút chì 'rê' theo đường đi mà băng đang đọc. <br><span class='badge keyword'>Pro Tip:</span> Đừng nhìn vào câu hỏi (16-20), hãy nhìn vào các chữ A-H trên bản đồ để phản xạ nhanh hơn.",
+        s3: {
+            target: 'step-display',
+            html: `<h3>⚡ Phản xạ nhìn chữ A-H</h3>
+                   <p class='explanation-text'>Mẹo Gen Z: Đừng đọc câu hỏi quá nhiều, hãy để mắt ở các chữ cái A, B, C... trên bản đồ. Tai nghe hướng nào, mắt liếc chữ đó ngay!</p>`
         },
-        4: {
-            title: "🛡️ Bước 4: Né 'Trap' thần sầu",
-            desc: "<span class='badge distractor'>Distractors:</span> Audio sẽ nói kiểu: 'Chúng tôi định đặt Supermarket ở C, <b>BUT</b> sau đó đổi sang G'. <br>=> Nghe thấy <i>However, Instead, Actually</i> là phải 'quay xe' ngay!",
+        s4: {
+            target: 'step-display',
+            html: `<h3>🛡️ Tỉnh táo trước 'Quay xe'</h3>
+                   <p class='explanation-text'><span class='badge distractor'>Distractors:</span> Audio hay nói kiểu 'A is good, but B is better'. Đáp án luôn là cái chốt hạ cuối cùng sau từ <b>BUT</b> hoặc <b>HOWEVER</b>.</p>`
+        },
+        
+        // Giải thích đáp án dựa trên cấu trúc Map thường gặp
+        q16: {
+            target: 'practice-display',
+            html: `<p>Đáp án: <span class='ans-highlight'>G</span></p>
+                   <p class='explanation-text'>Vị trí nằm ở phía đông của Pine Street, đối diện với ga tàu cũ. Thường Audio sẽ nói: "Go past the pond, turn right on Pine Street, it's the second building on your right."</p>`
+        },
+        q17: {
+            target: 'practice-display',
+            html: `<p>Đáp án: <span class='ans-highlight'>D</span></p>
+                   <p class='explanation-text'>Nằm ngay lối vào gần khu vực Ski passes. Điểm này rất dễ bắt vì nó nằm tách biệt ở phía bên trái (West) của bản đồ.</p>`
+        },
+        q18: {
+            target: 'practice-display',
+            html: `<p>Đáp án: <span class='ans-highlight'>E</span></p>
+                   <p class='explanation-text'>Bên cạnh <b>Town hall</b>. Audio thường dùng mốc Town Hall: "The museum is located just behind/next to the Town hall building."</p>`
+        },
+        q19: {
+            target: 'practice-display',
+            html: `<p>Đáp án: <span class='ans-highlight'>A</span></p>
+                   <p class='explanation-text'>Nằm ở ngã ba giữa <b>Mountain Road</b> và đường sắt cũ. "It's at the junction where Mountain Road meets the old railway line."</p>`
+        },
+        q20: {
+            target: 'practice-display',
+            html: `<p>Đáp án: <span class='ans-highlight'>F</span></p>
+                   <p class='explanation-text'>Nằm ở góc cong của <b>Willow Lane</b>, gần cái ao (Pond). "Go around the pond on Willow Lane, you'll see the Café on your right."</p>`
         }
     };
 
-    function showStep(step) {
-        const box = document.getElementById('display-box');
-        box.style.opacity = 0;
+    function showContent(id) {
+        const item = data[id];
+        const display = document.getElementById(item.target);
+        
+        // Hiệu ứng mờ dần khi đổi nội dung
+        display.style.opacity = 0;
         setTimeout(() => {
-            box.innerHTML = `<h3>${content[step].title}</h3><p>${content[step].desc}</p>`;
-            box.style.opacity = 1;
-            box.style.borderColor = step === 4 ? '#FF6584' : '#6C63FF';
-        }, 200);
+            display.innerHTML = item.html;
+            display.style.opacity = 1;
+        }, 150);
     }
 </script>
 
