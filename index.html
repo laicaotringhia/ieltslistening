@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Map Labelling - Gen Z Guide</title>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --bg: #F0F2F5;
+            --card: #FFFFFF;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 { color: var(--primary); font-size: 1.5rem; }
+        .step-box {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border: 2px dashed var(--primary);
+            border-radius: 15px;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .btn-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.05); background: #5650d8; }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .distractor { background: #ffebee; color: #c62828; }
+        .connector { background: #e8f5e9; color: #2e7d32; }
+        .keyword { background: #e3f2fd; color: #1565c0; }
+        .footer { margin-top: 20px; font-size: 0.9rem; color: #888; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🗺️ IELTS Map: Level Up Guide</h1>
+    <p>Chọn từng bước để xem "bí kíp" phá đảo bản đồ nhé!</p>
+
+    <div id="display-box" class="step-box">
+        <p>Sẵn sàng chưa? Click nút bên dưới để bắt đầu "on mic"!</p>
+    </div>
+
+    <div class="btn-group">
+        <button onclick="showStep(1)">Bước 1: Check Map</button>
+        <button onclick="showStep(2)">Bước 2: Định vị Toạ độ</button>
+        <button onclick="showStep(3)">Bước 3: Bắt Key & Connect</button>
+        <button onclick="showStep(4)">Bước 4: Tránh Bẫy (Distractors)</button>
+    </div>
+    
+    <p class="footer">Stay calm & slay the Listening test! ✨</p>
+</div>
+
+<script>
+    const content = {
+        1: {
+            title: "🔍 Bước 1: Scan nhanh 'địa bàn'",
+            desc: "Dành 20s xem tiêu đề và các địa danh có sẵn (Town Hall, Pond, Railway station...). <br><span class='badge keyword'>Keywords:</span> Tập trung vào các danh từ riêng đã in sẵn trên map vì chúng là 'cột mốc' cố định.",
+        },
+        2: {
+            title: "📍 Bước 2: Xác định 'Gốc toạ độ'",
+            desc: "Tìm điểm xuất phát (thường là 'You are here' hoặc lối vào chính). <br><span class='badge connector'>Connectors:</span> Chuẩn bị tinh thần cho các cụm từ hướng dẫn: <i>Go straight, Turn left, Opposite, At the junction...</i>",
+        },
+        3: {
+            title: "⚡ Bước 3: Follow theo nhịp Audio",
+            desc: "Tay cầm bút chì 'rê' theo đường đi mà băng đang đọc. <br><span class='badge keyword'>Pro Tip:</span> Đừng nhìn vào câu hỏi (16-20), hãy nhìn vào các chữ A-H trên bản đồ để phản xạ nhanh hơn.",
+        },
+        4: {
+            title: "🛡️ Bước 4: Né 'Trap' thần sầu",
+            desc: "<span class='badge distractor'>Distractors:</span> Audio sẽ nói kiểu: 'Chúng tôi định đặt Supermarket ở C, <b>BUT</b> sau đó đổi sang G'. <br>=> Nghe thấy <i>However, Instead, Actually</i> là phải 'quay xe' ngay!",
+        }
+    };
+
+    function showStep(step) {
+        const box = document.getElementById('display-box');
+        box.style.opacity = 0;
+        setTimeout(() => {
+            box.innerHTML = `<h3>${content[step].title}</h3><p>${content[step].desc}</p>`;
+            box.style.opacity = 1;
+            box.style.borderColor = step === 4 ? '#FF6584' : '#6C63FF';
+        }, 200);
+    }
+</script>
+
+</body>
+</html>
